@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "sirv . --port 8000 --quiet",
-    "test-chrome": "testcafe chromium:headless ./test.js"
+    "test-chrome": "testcafe chromium:headless ./test.js --concurrency 3"
   },
   "devDependencies": {
     "sirv-cli": "^2.0.2",
