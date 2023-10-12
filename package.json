@@ -1,0 +1,16 @@
+{
+  "name": "testcafe-chromium-issue-test",
+  "version": "0.1.0",
+  "description": "Test case for issue with loading Chromium",
+  "main": "index.html",
+  "author": "Mike Thompson",
+  "license": "MIT",
+  "scripts": {
+    "start": "sirv . --port 8000 --quiet",
+    "test-chrome": "testcafe chromium:headless ./test.js"
+  },
+  "devDependencies": {
+    "sirv-cli": "^2.0.2",
+    "testcafe": "^2.6.1"
+  }
+}

@@ -1,0 +1,26 @@
+name: TestCafé Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-22.04
+    env:
+      DOCKER_BUILDKIT: 1
+      BUILDKIT_PROGRESS: plain
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: TestCafé Chromium Test
+        run: |
+          make test
